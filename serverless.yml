@@ -1,14 +1,19 @@
-service: mytodolist-graphql-api
+service: aptracking-graphql-api
 
 plugins:
   - serverless-webpack
+  - serverless-dynamodb-local
   - serverless-offline
-
+  
 custom:
   webpackIncludeModules: true
+  dynamodb:
+    start:
+      migrate: true
 
 provider:
   name: aws
+  profile: serverless
   runtime: nodejs4.3
   iamRoleStatements:
     - Effect: Allow
@@ -24,7 +29,24 @@ provider:
         - dynamodb:GetShardIterator
         - dynamodb:DescribeStream
         - dynamodb:ListStreams
-      Resource: arn:aws:dynamodb:eu-west-1:*:*
+      Resource: arn:aws:dynamodb:eu-central-1:*:*
+    -  Effect: "Allow"
+       Action:
+         - "s3:ListBucket"
+       Resource:
+         Fn::Join:
+           - ""
+           - - "arn:aws:s3:::"
+             - Ref: ServerlessDeploymentBucket
+    -  Effect: "Allow"
+       Action:
+         - "s3:PutObject"
+       Resource:
+         Fn::Join:
+           - ""
+           - - "arn:aws:s3:::"
+             - Ref: ServerlessDeploymentBucket
+             - "/*"
 
 functions:
   graphql:
@@ -41,48 +63,9 @@ functions:
           type: dynamodb
           arn:
             Fn::GetAtt:
-              - TasksDynamoDbTable
+              - ActionPointsDynamoDbTable
               - StreamArn
           batchSize: 1
-      # - stream:
-      #     type: dynamodb
-      #     arn:
-      #       Fn::GetAtt:
-      #         - SongsDynamoDbTable
-      #         - StreamArn
-      #     batchSize: 1
 
 resources:
-  Resources:
-    TasksDynamoDbTable:
-      Type: AWS::DynamoDB::Table
-      DeletionPolicy: Retain
-      Properties:
-        TableName: 'tasks'
-        AttributeDefinitions:
-          - AttributeName: id
-            AttributeType: S
-        KeySchema:
-          - AttributeName: id
-            KeyType: HASH
-        ProvisionedThroughput:
-          ReadCapacityUnits: 1
-          WriteCapacityUnits: 1
-        StreamSpecification:
-          StreamViewType: NEW_AND_OLD_IMAGES
-    # SongsDynamoDbTable:
-    #   Type: AWS::DynamoDB::Table
-    #   DeletionPolicy: Retain
-    #   Properties:
-    #     TableName: 'songs'
-    #     AttributeDefinitions:
-    #       - AttributeName: id
-    #         AttributeType: S
-    #     KeySchema:
-    #       - AttributeName: id
-    #         KeyType: HASH
-    #     ProvisionedThroughput:
-    #       ReadCapacityUnits: 1
-    #       WriteCapacityUnits: 1
-    #     StreamSpecification:
-    #       StreamViewType: NEW_AND_OLD_IMAGES
+  Resources: ${file(generateConfig.js):Resources}

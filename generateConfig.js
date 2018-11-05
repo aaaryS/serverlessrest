@@ -23,7 +23,7 @@ const generateAWSDynamoDBtable = tableName => ({
   }
 });
 
-const generateResources = () => config.reduce((acc, resource) => (
+const generateResources = () => config.filter(resource => resource.tableName).reduce((acc, resource) => (
   Object.assign(acc, { [`${resource.item}sDynamoDbTable`]: generateAWSDynamoDBtable(resource.tableName) })
 ), {});
 

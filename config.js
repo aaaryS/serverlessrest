@@ -56,6 +56,12 @@ module.exports = [{
   ],
 },
 {
+  item: 'SubTask',
+  attributes: [
+    { name: 'title', type: 'String', required: true },
+  ],
+},
+{
   tableName: 'tasks',
   item: 'Task',
   attributes: [

@@ -62,11 +62,17 @@ module.exports = [{
   ],
 },
 {
+  type: 'enum',
+  name: 'TaskType',
+  values: ['MAIN', 'SUBTASK', 'ARCHIVED'],
+},
+{
   tableName: 'tasks',
   item: 'Task',
   attributes: [
     { name: 'title', type: 'String', required: true },
     { name: 'description', type: 'String', required: true },
+    { name: 't_type', type: 'TaskType' },
   ],
   queries: [
     { type: 'get' },
@@ -85,6 +91,7 @@ module.exports = [{
       attributes: [
         { name: 'description', type: 'String' },
         { name: 'title', type: 'String' },
+        { name: 't_type', type: 'TaskType', required: true },
       ],
     },
     {

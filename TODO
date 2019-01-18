@@ -1,0 +1,43 @@
+'Cmd/Ctrl+Enter' // Triggers `Todo: Toggle Box`
+'Alt+D' // Triggers `Todo: Toggle Done`
+'Alt+C' // Triggers `Todo: Toggle Cancelled`
+'Alt+S' // Triggers `Todo: Toggle Start`
+'Cmd/Ctrl+Shift+A' // Triggers  `Todo: Archive`
+
+Serverlessrest:
+  ✔ Add enums @done(18-11-09 09:05)
+  ☐ Add options for nested records
+  ✔ Decluter AWS stuff (configs)
+  ✔ Test AWS deployment and document
+  ☐ Better config for linter + fix issues
+
+  Docs:
+    ☐ README
+    ☐ config.js
+    ☐ Description
+    ☐ Netlify deploy
+    ☐ AWS deploy
+    ☐ Local development
+  
+  Tests:
+    ☐ Query unit tests
+    ☐ Type unit tests
+    ☐ Utils unit tests
+    ☐ Snapshot tests for examples
+    ☐ E2E tests
+      Curl or POSt on real localhost
+      https://blog.apollographql.com/4-simple-ways-to-call-a-graphql-api-a6807bcdb355
+  
+  Examples:
+    ☐ Basic  
+    ☐ with Enums
+    ☐ Nested Objects
+    ☐ Custom resolvers
+
+  ☐ Better console.log of queries
+
+
+https://alligator.io/graphql/introduction-graphql-queries/
+https://medium.com/the-ideal-system/graphql-and-mongodb-a-quick-example-34643e637e49
+https://serverless.com/blog/running-scalable-reliable-graphql-endpoint-with-serverless/
+https://scotch.io/bar-talk/serverless-development-with-node-mongodb-atlas-and-aws-lambda

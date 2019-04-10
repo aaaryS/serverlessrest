@@ -23,7 +23,14 @@ const generateAWSDynamoDBtable = tableName => ({
   }
 });
 
-const generateResources = () => config.filter(resource => resource.tableName).reduce((acc, resource) => (
+
+//TO DO check if auth in any table
+const withAuthConfig = [...config, {
+  tableName: 'users',
+  item: 'User',
+}]
+
+const generateResources = () => withAuthConfig.filter(resource => resource.tableName).reduce((acc, resource) => (
   Object.assign(acc, { [`${resource.item}sDynamoDbTable`]: generateAWSDynamoDBtable(resource.tableName) })
 ), {});
 

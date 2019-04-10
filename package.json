@@ -14,9 +14,11 @@
     "aws-sdk": "^2.94.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "babel-runtime": "^6.25.0",
+    "bcrypt": "^3.0.5",
     "graphql": "^0.10.5",
     "graphql-server-lambda": "^1.0.4",
     "graphql-tools": "^1.1.0",
+    "jsonwebtoken": "^8.5.1",
     "merge-graphql-schemas": "^1.1.1",
     "serverless-dynamodb-local": "^0.2.30",
     "uuid": "^3.1.0"

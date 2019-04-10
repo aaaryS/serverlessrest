@@ -9,6 +9,7 @@ Serverlessrest:
   ☐ Add options for nested records
   ✔ Decluter AWS stuff (configs)
   ✔ Test AWS deployment and document
+  ✔ JWT auth
   ☐ Better config for linter + fix issues
 
   Docs:

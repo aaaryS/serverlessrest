@@ -69,6 +69,7 @@ module.exports = [{
 {
   tableName: 'tasks',
   item: 'Task',
+  auth: true,
   attributes: [
     { name: 'title', type: 'String', required: true },
     { name: 'description', type: 'String', required: true },

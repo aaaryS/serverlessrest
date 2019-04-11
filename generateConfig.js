@@ -23,7 +23,6 @@ const generateAWSDynamoDBtable = tableName => ({
   }
 });
 
-
 //TO DO check if auth in any table
 const withAuthConfig = [...config, {
   tableName: 'users',

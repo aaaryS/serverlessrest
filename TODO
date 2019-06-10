@@ -6,11 +6,14 @@
 
 Serverlessrest:
   ✔ Add enums @done(18-11-09 09:05)
-  ☐ Add options for nested records
+  ✘ Add options for nested records @cancelled(19-06-06 18:22)
   ✔ Decluter AWS stuff (configs)
   ✔ Test AWS deployment and document
   ✔ JWT auth
   ☐ Better config for linter + fix issues
+  ☐ Create lib structure
+  ✘ Netlify support ? @cancelled(19-06-06 18:22)
+  ☐ CLI to create config
 
   Docs:
     ☐ README
@@ -30,9 +33,9 @@ Serverlessrest:
       https://blog.apollographql.com/4-simple-ways-to-call-a-graphql-api-a6807bcdb355
   
   Examples:
-    ☐ Basic  
+    ☐ Basic
     ☐ with Enums
-    ☐ Nested Objects
+    ✘ Nested Objects @cancelled(19-06-06 18:30)
     ☐ Custom resolvers
 
   ☐ Better console.log of queries

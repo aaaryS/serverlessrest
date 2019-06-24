@@ -1,4 +1,4 @@
-module.exports = [{
+const configExport = [{
   tableName: 'action_points',
   item: 'ActionPoint',
   attributes: [
@@ -100,3 +100,7 @@ module.exports = [{
     },
   ],
 }];
+
+global.configExport = configExport
+
+module.exports = configExport

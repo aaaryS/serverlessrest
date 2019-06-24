@@ -1,4 +1,6 @@
-const config = require('./config');
+const configUtils = require('./lib/utils/config');
+
+const config = configUtils.loadConfig();
 
 const generateAWSDynamoDBtable = tableName => ({
   "Type": "AWS::DynamoDB::Table",
@@ -23,16 +25,14 @@ const generateAWSDynamoDBtable = tableName => ({
   }
 });
 
-//TO DO check if auth in any table
-const withAuthConfig = [...config, {
+const withAuthConfig = configUtils.hasAuth(config) ? [...config, {
   tableName: 'users',
   item: 'User',
-}]
+}] : config
 
 const generateResources = () => withAuthConfig.filter(resource => resource.tableName).reduce((acc, resource) => (
   Object.assign(acc, { [`${resource.item}sDynamoDbTable`]: generateAWSDynamoDBtable(resource.tableName) })
 ), {});
-
 
 module.exports.Resources = () => {
   // Code that generates dynamic data

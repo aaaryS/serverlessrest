@@ -3,8 +3,8 @@ const configExport = [{
   item: 'Task',
   attributes: [
     { name: 'title', type: 'String', required: true },
-    { name: 'priority', type: 'Int', required: true },
-    { name: 'description', type: 'String' },
+    { name: 'priority', type: 'Int' },
+    { name: 'description', type: 'String', required: true },
     { name: 'tags', type: '[String]' },
     { name: 'created_at', type: 'String' },
   ],
@@ -17,7 +17,7 @@ const configExport = [{
       type: 'create',
       attributes: [
         { name: 'description', type: 'String!' },
-        { name: 'priority', type: 'Int!' },
+        { name: 'priority', type: 'Int' },
         { name: 'title', type: 'String!' },
         { name: 'created_at', type: 'String' },
         { name: 'tags', type: '[String]' },

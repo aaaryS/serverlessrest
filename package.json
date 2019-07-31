@@ -3,6 +3,7 @@
   "scripts": {
     "deploy": "npm-run-all lint:js sls",
     "test": "jest --coverage tests/e2e/basic.e2e.test.js",
+    "test:e2e": "jest --coverage --forceExit tests/e2e/*.test.js",
     "test:u": "jest -u --coverage",
     "lint:js": "eslint lib",
     "lint:js:fix": "eslint lib --fix",

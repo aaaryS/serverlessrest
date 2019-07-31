@@ -8,7 +8,10 @@
       "test": true,
       "describe": true,
       "afterEach": true,
-      "beforeEach": true
+      "beforeEach": true,
+      "it": true,
+      "beforeAll": true,
+      "afterAll": true,
     },
     "rules": {
       "no-underscore-dangle": off,

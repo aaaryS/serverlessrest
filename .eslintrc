@@ -12,6 +12,7 @@
       "it": true,
       "beforeAll": true,
       "afterAll": true,
+      "jest": true,
     },
     "rules": {
       "no-underscore-dangle": off,

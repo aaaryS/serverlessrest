@@ -12,6 +12,7 @@ Serverless implementation of "REST" using DynamoDB and GraphQL. Easy to setup - 
 ### Installing
 ```
 yarn install
+sls dynamodb install
 ```
 
 
@@ -19,6 +20,10 @@ yarn install
 
 ```
   yarn test
+```
+or for e2e tests:
+```
+  yarn test:e2e
 ```
 
 ## Deployment

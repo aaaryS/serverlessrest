@@ -10,7 +10,7 @@ Serverlessrest:
   ✔ Decluter AWS stuff (configs)
   ✔ Test AWS deployment and document
   ✔ JWT auth
-  ☐ Better config for linter + fix issues
+  ✔ Better config for linter + fix issues @done(19-08-01 21:54)
   ✘ Create lib structure @cancelled(19-08-01 21:08)
   ✘ Netlify support ? @cancelled(19-06-06 18:22)
   ✘ CLI to create config @cancelled(19-08-01 21:08)
@@ -18,8 +18,8 @@ Serverlessrest:
   Docs:
     ✔ README @done(19-08-01 20:46)
     ✘ config.js @cancelled(19-08-01 21:08)
-    ☐ Description
-    ☐ Briefly examples and possibilities
+    ✔ Description @done(19-08-05 12:59)
+    ✔ Briefly examples and possibilities @done(19-08-05 12:59)
     ✘ Netlify deploy @cancelled(19-08-01 20:44)
     ✔ AWS deploy @done(19-08-01 20:45)
     ✔ Local development @done(19-08-01 20:45)
@@ -29,22 +29,12 @@ Serverlessrest:
     ☐ Query unit tests
     ✘ Type unit tests @cancelled(19-08-01 21:20)
     ☐ Utils unit tests
-    ☐ Snapshot tests for examples
+    ☐ Snapshot tests for examples (test generated schema vs snapshot)
     ☐ Auth E2E test
     ✔ E2E tests @done(19-07-31 19:58)
-      Curl or POSt on real localhost
-      https://blog.apollographql.com/4-simple-ways-to-call-a-graphql-api-a6807bcdb355
   
   Examples:
     ✔ Basic @done(19-08-01 20:28)
     ✔ with Enums @done(19-08-01 20:28)
     ✘ Nested Objects @cancelled(19-06-06 18:30)
     ✔ Custom resolvers @done(19-08-01 20:28)
-
-  ☐ Better console.log of queries
-
-
-https://alligator.io/graphql/introduction-graphql-queries/
-https://medium.com/the-ideal-system/graphql-and-mongodb-a-quick-example-34643e637e49
-https://serverless.com/blog/running-scalable-reliable-graphql-endpoint-with-serverless/
-https://scotch.io/bar-talk/serverless-development-with-node-mongodb-atlas-and-aws-lambda

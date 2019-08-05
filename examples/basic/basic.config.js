@@ -31,6 +31,9 @@ const configExport = [{
         { name: 'tags', type: '[String]' },
       ],
     },
+    {
+      type: 'delete',
+    },
   ],
 }];
 

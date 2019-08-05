@@ -11,6 +11,18 @@ const configExport = [{
   queries: [
     { type: 'get' },
     { type: 'index' },
+    {
+      type: 'custom',
+      name: 'epicsBySprint',
+      attributes: [
+        {
+          name: 'sprint',
+          type: 'String',
+          required: true,
+        },
+      ],
+      returnType: 'collection',
+    },
   ],
   mutations: [
     {
@@ -74,6 +86,6 @@ const configExport = [{
   ],
 }];
 
-global.configExport = configExport
+global.configExport = configExport;
 
-module.exports = configExport
+module.exports = configExport;

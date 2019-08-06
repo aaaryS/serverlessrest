@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshot for auth config 1`] = `
+"schema {
+  query: Query
+  mutation: Mutation
+}
+
+type Query {
+  tasks: [Task]
+  task(id: ID!): Task
+  me: User
+}
+
+type Mutation {
+  createTask(title: String!): Task
+  deleteTask(id: ID!): Task
+  signup(username: String!, email: String!, password: String!): String
+  login(email: String!, password: String!): String
+  me: Object
+}
+
+type Task {
+  id: ID!
+  title: String!
+}
+
+scalar Object
+
+type User {
+  id: Int!
+  username: String!
+  email: String!
+  password: String!
+}
+"
+`;
+
+exports[`should match snapshot for basic config 1`] = `
+"schema {
+  query: Query
+  mutation: Mutation
+}
+
+type Query {
+  tasks: [Task]
+  task(id: ID!): Task
+}
+
+type Mutation {
+  createTask(description: String!, priority: Int, title: String!, created_at: String, tags: [String]): Task
+  updateTask(id: ID!, description: String, title: String, tags: [String]): Task
+  deleteTask(id: ID!): Task
+}
+
+type Task {
+  id: ID!
+  title: String!
+  priority: Int
+  description: String!
+  tags: [String]
+  created_at: String
+}
+"
+`;
+
+exports[`should match snapshot for complex config 1`] = `
+"schema {
+  query: Query
+  mutation: Mutation
+}
+
+type Query {
+  epics: [Epic]
+  epic(id: ID!): Epic
+  epicsBySprint(sprint: String!): [Epic]
+  tasks: [Task]
+  task(id: ID!): Task
+  me: User
+}
+
+type Mutation {
+  createEpic(description: String!, archived_at: String, due_date: String, sprint: String): Epic
+  updateEpic(id: ID!, description: String, sprint: String): Epic
+  deleteEpic(id: ID!): Epic
+  createTask(description: String!, title: String!): Task
+  updateTask(id: ID!, description: String, title: String, t_type: TaskType!): Task
+  deleteTask(id: ID!): Task
+  signup(username: String!, email: String!, password: String!): String
+  login(email: String!, password: String!): String
+  me: Object
+}
+
+type Epic {
+  id: ID!
+  description: String!
+  created_at: String
+  archived_at: String
+  due_date: String
+  sprint: String
+}
+
+enum TaskType {
+  MAIN
+  SUBTASK
+  ARCHIVED
+}
+
+type Task {
+  id: ID!
+  title: String!
+  description: String!
+  t_type: TaskType
+}
+
+scalar Object
+
+type User {
+  id: Int!
+  username: String!
+  email: String!
+  password: String!
+}
+"
+`;

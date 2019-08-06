@@ -2,7 +2,7 @@
   "name": "serverlessrest",
   "scripts": {
     "test": "jest --coverage --testPathIgnorePatterns=/tests/e2e/",
-    "test:e2e": "jest --coverage --forceExit tests/e2e/*.test.js",
+    "test:e2e": "jest --forceExit --maxWorkers=1 tests/e2e/*.test.js",
     "test:u": "jest -u --coverage",
     "lint:js": "eslint lib",
     "lint:js:fix": "eslint lib --fix",

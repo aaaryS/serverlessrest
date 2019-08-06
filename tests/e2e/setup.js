@@ -4,9 +4,9 @@ const kill = require('tree-kill');
 let slsOfflineProcess;
 let dynamoDBProcess;
 
-export const startSlsOffline = port => new Promise((resolve, reject) => {
-  dynamoDBProcess = spawn('sls', ['dynamodb', 'start', '--inMemory', '--seed']);
-  slsOfflineProcess = spawn('yarn', ['run', 'sls:offline', '--port', port, '--config=examples/basic/basic.config.js']);
+export const startSlsOffline = (port, config = 'examples/basic/basic.config.js') => new Promise((resolve, reject) => {
+  dynamoDBProcess = spawn('sls', ['dynamodb', 'start', '--inMemory']);
+  slsOfflineProcess = spawn('yarn', ['run', 'sls:offline', '--port', port, `--config=${config}`]);
 
   console.log(`Serverless: Offline started with PID : ${slsOfflineProcess.pid}`);
 
@@ -27,7 +27,6 @@ export const startSlsOffline = port => new Promise((resolve, reject) => {
       }
     });
   });
-
 
   Promise.all([slsStart, dynamoDBStart]).then(() => {
     console.log('Serverless Offline Test started');
